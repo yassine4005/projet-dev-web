@@ -1,0 +1,685 @@
+/* App.css */
+.header {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* 👈 gris clair */
+  padding: 10px 0;
+}
+.top-bar {
+  background-color: #ffffff; /* blanc */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd; /* petite ligne de séparation */
+}
+
+.top-bar-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-bar-content span {
+  cursor: pointer;
+  color: #333;
+}
+
+.top-bar-content span:hover {
+  text-decoration: underline;
+}
+.top-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.top-link span {
+  color: #333;
+}
+
+.top-link:hover span {
+  text-decoration: underline;
+}
+
+.top-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Top header */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 150px;
+  margin-left: 50px
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Mettre la barre plus bas */
+}
+
+
+.search-container {
+  position: relative;
+  width: 60%;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* espace pour l'icône à droite */
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px; /* Ajoute de l'espace vers le haut pour pousser vers le bas */
+}
+
+.search-icon {
+  position: absolute;
+  right:-40px;
+  top: 65%;
+  transform: translateY(-50%);
+  font-size: 90px;
+  color: #333; /* 👈 Gris foncé */
+
+  pointer-events: none; /* pour que le clic passe à l'input */
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-right: 50px; /* 👈 recule vers la gauche */
+}
+
+.account, .cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.support {
+  text-align: right;
+  margin-top: 20px; /* 👈 descend vers le bas */
+  font-size: 15px;
+}
+
+.support-phone {
+  color:black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  gap: 8px; /* espace entre l'image et le texte */
+}
+.phone-icon {
+  width: 30px;
+  height: 30px;
+}
+.support-text {
+  font-size: 12px;
+  color: gray;
+  margin-right: -30px;
+}
+
+/* Menu */
+.menu {
+  background-color: black;
+  padding: 10px 20px;
+  transition: transform 0.3s ease;
+}
+.menu {
+  transition: transform 0.3s ease;
+}
+
+.menu:hover {
+  transform: translateY(-5px); /* Le nav monte de 5px quand la souris passe dessus */
+}
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.nav-left > li:hover {
+  position: relative;
+  background-color:#00BFFF;
+  border-radius: 5px;
+  transform: translateY(-5px); /* Monte chaque li au hover */
+}
+
+.nav-left > li > a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Sous-menus */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  flex-direction: column;
+  min-width: 180px;
+  border-radius: 5px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease; /* Animation douce */
+  transform: translateY(10px); /* Léger décalage vers le bas au début */
+  z-index: 1000;
+}
+
+.submenu li:hover {
+  padding: 8px 20px;
+  
+  border-radius: 5px;/* Et aussi changer la couleur du lien */
+}
+
+.submenu li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Quand la souris est sur le li, on rend visible */
+.nav-left > li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Le menu monte doucement */
+}
+
+/* Panier */
+.cart-link {
+  margin-left: auto;
+}
+
+.cart-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white; /* Gris foncé */
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  border-radius: 5px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a {
+  color: black;
+ 
+}
+.submenu li a:hover {
+  color:#00bfff;
+ 
+}
+
+
+/* Affiche le sous-menu au survol */
+.nav-left > li:hover .submenu {
+  display: flex;
+}
+
+
+.slider-container {
+  padding: 20px 50px;
+  overflow: hidden; /* Très important ! */
+  margin: 60px 50px;
+  gap: 30px;
+  transform:t;
+  margin: 5px 40px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.slide-image {
+  flex: 2;
+  max-width: 70%; /* Limiter la taille du slider */
+  overflow: hidden; /* Cache tout débordement */
+  position: relative;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+/* Positionner les dots du slider */
+.slick-dots {
+  bottom: 30px; /* Descend les points */
+  margin-left: -400px;
+}
+
+.slick-dots li button:before {
+  font-size: 20px; /* Taille des petits points */
+  color: #FFFFFF     
+}
+
+/* Si tu veux rendre le point actif (sélectionné) d'une couleur différente */
+.slick-dots li.slick-active button:before {
+  color: #FFFFFF;
+}
+.main-slider-container {
+  display: flex;
+  align-items: stretch; /* Important: les deux colonnes auront la même hauteur */
+  gap: 20px;
+  margin: 20px;
+}
+
+.slider-section {
+  flex: 2;
+  background: #fff; /* Optionnel : fond blanc */
+}
+
+.main-slider-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 20px;
+  height: 400px; /* Hauteur générale pour bien aligner */
+  flex: 2;
+  position: relative;
+  overflow: hidden;
+  max-width: 70%;
+}
+
+.slider-left {
+  flex: 2;
+  height: 100%;
+}
+
+.images-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  margin-left: 1000px;
+  margin-top: -430px; /* << AJOUTER CETTE LIGNE */
+}
+
+.side-image {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 350px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px;
+  color:#ffffff; /* couleur des flèches */
+}
+.products-section {
+  padding:100px;
+  background: white;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: nowrap; /* NE PAS aller à la ligne */
+
+  gap: 20px;
+  overflow-x: auto; /* Scroll horizontal si l'écran est petit */
+}
+
+.product-card {
+  flex: 0 0 250px; /* Largeur fixe pour chaque produit */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+.product-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.new-badge {
+  background-color: #17cfc4;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.product-image {
+   width: 100%;
+  height: 220px; /* ✅ Hauteur du cadre */
+  object-fit: cover; /* ✅ Ajuste l'image sans déformation */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 18px;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  text-align: center; 
+}
+
+.product-price {
+  color: #17cfc4;
+  font-size: 18px;
+  margin: 5px 0 15px 0;
+  font-weight: bold;
+  text-align: center; 
+}
+
+.product-buttons {
+  color: #00aaff;
+  font-weight: bold;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.wishlist-button,
+.add-to-cart-button,
+.view-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #00aaff;
+}
+
+.add-to-cart-button {
+  padding: 8px 12px;
+  background-color: #00aaff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.four-images-slider {
+  margin: 40px auto;
+  width: 90%;
+  background:#ffffff ;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.small-slide {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  
+}
+.four-images-slider .slick-prev{
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: black;
+ border-radius: 100px;
+}
+.four-images-slider .slick-prev {
+  left: 10px !important; /* Position de la flèche gauche */
+
+}
+
+.four-images-slider .slick-next {
+  right: 10px !important; /* Position de la flèche droite */
+  background-color: black;
+  border-radius: 100px;
+
+}
+.two-sliders-section {
+  display: flex;
+  align-items: flex-end;
+
+  margin-top: -50px; /* Toujours pour remonter */
+  justify-content: center;
+}
+
+.single-slider-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.single-slider-right {
+  flex: 1;
+  max-width: 800px;
+  margin-left: -100px; /* 🔥 Colle le slider de droite vers le slider de gauche */
+}
+
+
+
+.small-slide {
+  width: 100%; /* L'image prend toute la largeur */
+  height: 200px; /* Hauteur fixe */
+  object-fit: cover; /* Remplir sans déformer */
+  border-radius: 10px; /* Coins arrondis */
+}
+.left-image {
+  width: 70%;
+  height: 550px;
+  object-fit: contain;
+  border-radius: 10px;
+  
+}
+.right-image {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.footer {
+  background: #f9f9f9;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.newsletter-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.newsletter-input button {
+  background: #00b5ad;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-bottom .social-icons {
+  margin-bottom: 10px;
+}
+
+.footer-bottom .social-icons a {
+  margin: 0 5px;
+  font-size: 18px;
+  color: #666;
+  text-decoration: none;
+}
+.footer-column ul li a {
+  color: black; /* Texte noir */
+  text-decoration: none; /* Supprimer soulignement */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre l'icône et le texte */
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  color: #555; /* Un petit gris au hover */
+}
+
+.footer-column ul li a svg {
+  color: black; /* Couleur des icônes noir */
+}
+.footer-gray-line {
+  background-color: gainsboro; /* Gris foncé */
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 🔥 Les liens partent à droite */
+  padding-right: 40px; /* Petite marge à droite */
+}
+
+
+.footer-gray-links a:hover {
+  text-decoration: underline;
+}
+.slide-item {
+  position: relative;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 10px; /* Décale du bas */
+  left: 10px; /* Décale de la gauche */
+  background-color:#00cfff; /* Bande noire semi-transparente */
+  transform: translateX(90%); /* 🔥 Ajuste pour vraiment centrer */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.cart-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.cart-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-count {
+  font-size: 12px;
+  color: firebrick;
+}
